@@ -14,7 +14,8 @@
     "react-native-screens": "*",
     "react-native-safe-area-context": "*",
     "react-native-gesture-handler": "*",
-    "react-native-reanimated": "*"
+    "react-native-reanimated": "*",
+    "@react-native-masked-view/masked-view": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && cp package-lock.json ./apps/mobile-app/",
