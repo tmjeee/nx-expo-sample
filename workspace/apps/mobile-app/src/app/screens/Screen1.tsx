@@ -2,8 +2,9 @@ import {Button, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text} from "rea
 import React, {useRef} from "react";
 import {CounterAction, increment, incrementAsync} from "../reducers/counterReducer";
 import {useAppDispatch, useAppSelector} from "../hooks";
-import {NativeStackScreenProps} from "react-native-screens/native-stack";
+import {NativeStackScreenProps} from "@react-navigation/native-stack";
 import {appNavigate, AppScreenStackParamList} from "../navigation";
+import {useNavigation} from "@react-navigation/native";
 
 export type Screen1Prop = NativeStackScreenProps<AppScreenStackParamList, 'Screen1'>;
 
@@ -11,6 +12,7 @@ const Screen1 = () => {
   const scrollViewRef = useRef<null | ScrollView>(null);
 
   const dispatch = useAppDispatch();
+  const nav = useNavigation<Screen1Prop>();
 
   const counterState = useAppSelector((state) => state.counter);
 
@@ -19,7 +21,8 @@ const Screen1 = () => {
     const action = await dispatch<CounterAction | undefined | unknown>(incrementAsync());
     console.log('*** dispatch incrementAsync result', (action as any).type, (action as any).payload);
     if (counterState.status == 'succeeded') {
-      appNavigate('Screen2', {});
+      // appNavigate('Screen2', {});
+      nav.navigation.navigate('Screen2');
     }
   }
 

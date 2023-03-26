@@ -2,22 +2,11 @@
 import 'setimmediate';
 import 'react-native-gesture-handler';
 import React, { useRef, useState } from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  TouchableOpacity,
-  Linking, Button,
-} from 'react-native';
 import store from './store';
 import {Provider, useDispatch} from "react-redux";
-import {increment, incrementAsync} from "./reducers/counterReducer";
 import {useAppDispatch} from "./hooks";
-import {NavigationContainer, createNavigationContainerRef} from "@react-navigation/native";
-import {createNativeStackNavigator} from "react-native-screens/native-stack";
+import {NavigationContainer} from "@react-navigation/native";
+import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import Screen1 from "./screens/Screen1";
 import Screen2 from "./screens/Screen2";
 import {navigationRef} from "./navigation";

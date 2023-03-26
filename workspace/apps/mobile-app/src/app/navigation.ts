@@ -10,6 +10,7 @@ export type AppScreenStackParamList = {
 export const navigationRef = createNavigationContainerRef<AppScreenStackParamList>();
 
 // todo: not sure how to type these
+// NOTE: only use when within redux construct, else useNavigation<ScreenProp>();
 export const appNavigate = (name: any, params: any) => {
   if (navigationRef.isReady()) {
     navigationRef.navigate(name, params);
