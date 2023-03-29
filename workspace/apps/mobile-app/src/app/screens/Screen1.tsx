@@ -21,8 +21,8 @@ const Screen1 = () => {
     const action = await dispatch<CounterAction | undefined | unknown>(incrementAsync());
     console.log('*** dispatch incrementAsync result', (action as any).type, (action as any).payload);
     if (counterState.status == 'succeeded') {
-      // appNavigate('Screen2', {});
-      nav.navigation.navigate('Screen2');
+      appNavigate('Screen2', {});
+      // nav.navigation.navigate('Screen2');
     }
   }
 
